@@ -1,3 +1,75 @@
+// import { Button, Form, Input, message } from "antd";
+// import WelcomeContent from "../common/welcome-content";
+// import { Link } from "react-router-dom";
+// import { useState } from "react";
+// import axios from "axios";
+// import Cookies from "js-cookie";
+// import { useNavigate } from "react-router-dom";
+
+// function LoginPage() {
+//   const [loading, setLoading] = useState(false);
+//   const navigate = useNavigate();
+//   const onFinish = async (values: { email: string; password: string }) => {
+//     try {
+//       setLoading(true);
+//       const response = await axios.post("/api/users/login", values);
+//       message.success("Login successfull");
+//       Cookies.set("token", response.data.token);
+//       navigate("/");
+//     } catch (error: any) {
+//       message.error(error?.response?.data?.message || error.message);
+//     } finally {
+//       setLoading(false);//
+//     }
+//   };
+//   return (
+//     <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
+//       <div className="welcome-content bg-primary md:flex justify-center items-center hidden">
+//         <WelcomeContent />
+//       </div>
+//       <div className="form-content flex items-center justify-center">
+//         <Form
+//           className="flex flex-col gap-5 w-96"
+//           layout="vertical"
+//           onFinish={onFinish}
+//         >
+//           <h1 className="text-2xl font-bold text-primary">
+//             Login to your account
+//           </h1>
+
+//           <hr />
+
+//           <Form.Item
+//             label="Email"
+//             name="email"
+//             rules={[{ required: true, message: "Please input your email!" }]}
+//           >
+//             <Input placeholder="Email" />
+//           </Form.Item>
+
+//           <Form.Item
+//             label="Password"
+//             name="password"
+//             rules={[{ required: true, message: "Please input your password!" }]}
+//           >
+//             <Input type="password" placeholder="Password" />
+//           </Form.Item>
+
+//           <Button type="primary" htmlType="submit" loading={loading}>
+//             Login
+//           </Button>
+
+//           <span className="text-sm">
+//             Don't have an account ? <Link to="/register">Register</Link>
+//           </span>
+//         </Form>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default LoginPage;
+
 import { Button, Form, Input, message } from "antd";
 import WelcomeContent from "../common/welcome-content";
 import { Link } from "react-router-dom";
@@ -9,19 +81,21 @@ import { useNavigate } from "react-router-dom";
 function LoginPage() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
   const onFinish = async (values: { email: string; password: string }) => {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/login", values);
-      message.success("Login successfull");
+      message.success("Login successful");
       Cookies.set("token", response.data.token);
       navigate("/");
     } catch (error: any) {
       message.error(error?.response?.data?.message || error.message);
     } finally {
-      setLoading(false);//
+      setLoading(false);
     }
   };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
       <div className="welcome-content bg-primary md:flex justify-center items-center hidden">
@@ -60,8 +134,16 @@ function LoginPage() {
           </Button>
 
           <span className="text-sm">
-            Don't have an account ? <Link to="/register">Register</Link>
+            Don't have an account? <Link to="/register">Register</Link>
           </span>
+
+          <span className="text-sm mt-4">
+  Have a vision to make a difference? Empower your cause with us!{" "}
+  <a href="mailto:tripathy.sushobhan@gmail.com" className="text-primary font-bold">
+    Reach out to us
+  </a>{" "}
+  and let's create a campaign that changes lives together.
+</span>
         </Form>
       </div>
     </div>
@@ -69,6 +151,7 @@ function LoginPage() {
 }
 
 export default LoginPage;
+
 // The selected code snippet is a functional component named `LoginPage` in a TypeScript React application. This component is responsible for rendering a login page with a form for users to enter their email and password.
 
 // Here's a breakdown of the code:

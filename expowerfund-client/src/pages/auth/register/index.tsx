@@ -74,6 +74,15 @@ function RegisterPage() {
           <span className="text-sm">
             Have an account ? <Link to="/login">Login</Link>
           </span>
+
+
+          <span className="text-sm mt-4">
+  Have a vision to make a difference? Empower your cause with us!{" "}
+  <a href="mailto:tripathy.sushobhan@gmail.com" className="text-primary font-bold">
+    Reach out to us
+  </a>{" "}
+  and let's create a campaign that changes lives together.
+</span>
         </Form>
       </div>
     </div>
