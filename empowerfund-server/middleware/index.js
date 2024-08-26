@@ -118,3 +118,18 @@ export const authenticationMiddleware = async (req, res, next) => {
 //     });
 //   }
 // };
+/*
+The selected code is an asynchronous middleware function named `authenticationMiddleware` in a Node.js application using the Express framework. This middleware is responsible for authenticating incoming requests by verifying the JWT token provided in the request's cookies.
+
+Here's a breakdown of the code:
+
+1. The `jwt` module is imported from "jsonwebtoken".
+2. The `authenticationMiddleware` function is defined as an asynchronous function that takes three parameters: `req`, `res`, and `next`.
+3. Inside the function, the `req.cookies` object is accessed to retrieve the token.
+4. The `token` is then checked for its existence. If it doesn't exist, a 401 status code is returned with a JSON response indicating "Unauthorized".
+5. If the token exists, it is verified using the `jwt.verify()` method. The `process.env.JWT_SECRET` is used as the secret key to verify the token.
+6. If the token is successfully verified, the decoded user object is assigned to `req.user` and the `next()` function is called to proceed to the next middleware in the request chain.
+7. If any error occurs during the verification process, a 500 status code is returned with a JSON response indicating "Internal server error".
+
+This middleware is designed to be used in an Express application to secure routes that require authentication. It ensures that only valid and authenticated requests can access the protected routes.
+*/

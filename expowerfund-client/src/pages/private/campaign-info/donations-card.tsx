@@ -125,3 +125,25 @@ function DonationsCard({
 }
 
 export default DonationsCard;
+
+/*
+The selected code snippet is a functional component named `DonationsCard` in a React application. This component is responsible for rendering a donations card within a campaign page. The card displays the current progress of the campaign, allows users to input a donation amount and message, and initiates the payment process when the "Donate" button is clicked.
+
+Here's a breakdown of the selected code:
+
+1. Import statements: The code imports necessary components and libraries from the "antd" and "axios" libraries, as well as the `CampaignTypeProps` interface from the local codebase.
+
+2. Stripe configuration: The code defines a Stripe public key and initializes a `stripePromise` using the `loadStripe` function from the "@stripe/stripe-js" library.
+
+3. `DonationsCard` function component: This is the main component that handles the donations functionality. It takes `campaignData` and `reloadCampaignData` props, which represent the campaign data and a function to reload the campaign data, respectively.
+
+4. State variables: The component uses React's `useState` hook to manage state variables such as `amount`, `message`, `clientSecretToken`, `loading`, and `showCheckoutForm`.
+
+5. `getClientSecretToken` function: This function is called when the "Donate" button is clicked. It sets the loading state to true, sends a POST request to the "/api/payments/create-payment-intent" endpoint with the donation amount, and updates the `clientSecretToken` state with the response data. It also shows the checkout form by setting the `showCheckoutForm` state to true.
+
+6. `options` object: This object is used to pass the `clientSecret` to the `Elements` component from the "@stripe/react-stripe-js" library.
+
+7. JSX code: The component renders a donations card with progress, donation amount input, message input, and the "Donate" button. When the `clientSecretToken` is available, it renders the `CheckoutForm` component from the "./checkout-form" file, passing necessary props such as `open`, `onClose`, `campaignData`, `message`, `amount`, and `reloadCampaignData`.
+
+Overall, the `DonationsCard` component handles the donations functionality within a campaign page, allowing users to input a donation amount and message, and initiating the payment process using Stripe.
+*/

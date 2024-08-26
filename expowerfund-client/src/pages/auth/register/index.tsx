@@ -90,3 +90,23 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
+
+/*
+The selected code snippet is a React function component named `RegisterPage`. This component is responsible for rendering a registration form for users to create a new account. Here's a breakdown of the code:
+
+1. Import statements: The component imports necessary modules from the `antd` library for UI components, `WelcomeContent` component from the `common` directory, and `Link`, `useNavigate` from `react-router-dom` for navigation, `axios` for making HTTP requests, and `useState` for managing component state.
+
+2. Function component definition: The `RegisterPage` function component is defined.
+
+3. State variables: The component uses the `useState` hook to manage two state variables: `loading` (boolean) to indicate whether the form submission is in progress, and `navigate` (function) to navigate to different routes.
+
+4. `onSubmit` function: This function is called when the form is submitted. It performs the following tasks:
+   - Sets the `loading` state to `true` to indicate that the form submission is in progress.
+   - Makes an asynchronous POST request to the `/api/users/register` endpoint using `axios` to register the user.
+   - If the registration is successful, displays a success message using `message.success`, navigates to the `/login` route using `navigate`, and sets the `loading` state back to `false`.
+   - If an error occurs during the registration process, displays an error message using `message.error`, and sets the `loading` state back to `false`.
+
+5. JSX return statement: The component returns a JSX expression that renders the registration form. The form includes fields for the user's full name, email, and password, as well as a submit button. It also includes a link to the login page and a call-to-action message for users with a vision to make a difference.
+
+Overall, the `RegisterPage` component is responsible for handling user registration and rendering the registration form using the provided UI components.
+*/

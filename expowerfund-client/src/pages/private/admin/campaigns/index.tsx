@@ -141,3 +141,24 @@ function CampaignsPage() {
 }
 
 export default CampaignsPage;
+/*
+The selected code is a React functional component named `CampaignsPage`. This component is responsible for managing and displaying a list of campaigns in an admin dashboard. Here's a breakdown of the code:
+
+1. Import statements: The component imports necessary modules and components from various libraries, including `Button`, `message`, `Table`, `Tooltip`, `useNavigate`, `useState`, `useEffect`, `axios`, `dayjs`, and icons from `lucide-react`.
+
+2. Type definition: The component uses a custom type `CampaignTypeProps` to define the structure of campaign data.
+
+3. State variables: The component uses several state variables to manage its state. These include `campaigns` (an array of campaigns), `selectedCampaign` (the currently selected campaign), `showCampaignDonations` (a boolean indicating whether the donations modal should be shown), `loading` (a boolean indicating whether the component is loading data), and `setCampaigns`, `setSelectedCampaign`, `setShowCampaignDonations`, and `setLoading` (functions to update these state variables).
+
+4. `getData` function: This asynchronous function is responsible for fetching the list of campaigns from the server using `axios`. It sets the loading state to true before making the request, updates the `campaigns` state with the response data, and sets the loading state to false. If an error occurs during the request, it displays an error message using `message.error`.
+
+5. `onDelete` function: This asynchronous function is responsible for deleting a campaign from the server using `axios`. It sets the loading state to true before making the request, displays a success message using `message.success` if the deletion is successful, and refreshes the list of campaigns by calling `getData`. If an error occurs during the request, it displays an error message using `message.error`.
+
+6. `useEffect` hook: This hook is used to fetch the list of campaigns when the component mounts. It calls the `getData` function.
+
+7. `columns` array: This array defines the columns for the `Table` component. Each column object has a `title`, `dataIndex`, `key`, and optional `render` function to format the cell content.
+
+8. `return` statement: This is the JSX code that renders the component. It includes a `div` containing a `PageTitle` component, a `Button` to create a new campaign, a `Table` component with the defined columns and data, and a `CampaignDonations` component (not shown in the selected code) that is conditionally rendered based on the `showCampaignDonations` state variable.
+
+Overall, the `CampaignsPage` component is responsible for fetching, displaying, and managing a list of campaigns in an admin dashboard. It uses `axios` to make HTTP requests to the server, and it updates the component's state based on the response data. The component also includes functionality for deleting campaigns and displaying a modal with donations for a selected campaign.
+*/

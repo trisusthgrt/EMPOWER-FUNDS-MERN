@@ -72,3 +72,20 @@ function Homepage() {
 }
 
 export default Homepage;
+/*
+The selected code snippet is a functional component named `Homepage` in a React application. This component is responsible for fetching and displaying a list of campaigns on the homepage.
+
+Here's a breakdown of the code:
+
+1. Import statements: The code imports necessary dependencies such as `useState`, `useEffect`, `PageTitle`, `CampaignTypeProps`, `axios`, `message`, `Progress`, and `Spin` from their respective modules.
+
+2. `Homepage` function component: This function component initializes state variables `campaigns` (to store the fetched campaigns) and `loading` (to indicate whether data is being fetched). It also uses the `useNavigate` hook from `react-router-dom` to navigate to different routes.
+
+3. `getData` function: This is an asynchronous function that fetches campaign data from the server using the `axios` library. It sets the `loading` state to `true` before making the API call, and then updates the `campaigns` state with the fetched data. If an error occurs during the API call, it displays an error message using the `message` component from Ant Design. Finally, it sets the `loading` state to `false`.
+
+4. `useEffect` hook: This hook is used to call the `getData` function when the component mounts. This ensures that the campaign data is fetched when the homepage is loaded.
+
+5. JSX return statement: The JSX return statement renders the UI of the homepage. It includes a `PageTitle` component, a loading spinner using the `Spin` component from Ant Design, and a grid of campaign cards. Each campaign card displays the campaign image, name, progress bar, and collected amount. The `onClick` event of each card triggers navigation to the campaign details page using the `navigate` function.
+
+Overall, the selected code snippet is responsible for fetching and displaying a list of campaigns on the homepage of a React application. It uses the `useState` and `useEffect` hooks to manage state and perform side effects, respectively. The fetched campaign data is displayed in a visually appealing grid format, and the user can navigate to the campaign details page by clicking on a campaign card.
+*/
